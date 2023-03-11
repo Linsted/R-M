@@ -1,16 +1,21 @@
+import { Header } from "./Header/Header";
+import * as API from "../Api/Api"
+import { SearchForm } from "./SearchForm/SearchForm";
+import { useState } from 'react';
+
 export const App = () => {
+
+ const [query, setQuery] = useState("");
+
+  const onSubmit = (query) => {
+    console.log(query)
+  };
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      < Header />
+      <SearchForm onSubmit={onSubmit} />
+
     </div>
   );
 };
