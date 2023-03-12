@@ -1,33 +1,30 @@
-import { Formik, Form,Field } from 'formik';
+
+import PropTypes from 'prop-types';
+import { InputStyled, LabelStyled,IconStyled } from './SearchForm.styled';
+
 
      
 
 
-export const SearchForm = ({onSubmit}) => {
-  
-    
-    const initialValues = {
-        input: "",
-    }
+export const SearchForm = ({onFilter, filter}) => {
+    // console.log(filter);
 
-    const handleSubmit = (values, {resetForm}) => {
-        
-        onSubmit(values.input)
-        resetForm();
-        
-    };
+
 
     return (
-        <Formik
-            initialValues={initialValues}
-            onSubmit={handleSubmit}
-        >
-            <Form>
-                <button type='submit'>ok</button>
-                <Field type="text" name='input' /> 
-                
-            </Form>
-
-        </Formik>
+        <LabelStyled>
+                <IconStyled />
+                <InputStyled type="text" name='filter' onChange={onFilter} value={filter} placeholder="Filter by name..." />             
+        </LabelStyled>
     );
 };
+
+
+SearchForm.propTypes = {
+    onFilter: PropTypes.func.isRequired,
+    filter: PropTypes.string.isRequired,
+}
+
+
+
+// AiOutlineSearch
