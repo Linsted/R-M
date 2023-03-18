@@ -6,7 +6,7 @@ import Error from "../components/Error/Error";
 import SearchForm from "../components/SearchForm/SearchForm";
 import { useSearchParams, Link } from "react-router-dom";
 import Header from "../components/Header/Header";
- import { useDebounce } from 'use-debounce';
+
 
 
 
