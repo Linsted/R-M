@@ -5,7 +5,7 @@ import ImgD1200px_2x from "../../img/Header_img_desktop@2x.jpg";
 import { HeaderStyled } from "./Header.styled";
 
 
-export const Header = () => { 
+ const Header = () => { 
 
     return (
         
@@ -18,3 +18,5 @@ export const Header = () => {
     </HeaderStyled>);
     
 };
+
+export default Header;
