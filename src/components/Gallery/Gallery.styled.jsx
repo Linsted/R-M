@@ -3,8 +3,13 @@ import styled from '@emotion/styled';
 export const GalleryStyled = styled.ul`
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
     justify-content: center;
+
+    @media(min-width: 1020px){
+        margin-inline: auto;
+    max-width: 1020px;
+    
+    }
     
 
     @media(max-width: 360px){
@@ -14,10 +19,10 @@ export const GalleryStyled = styled.ul`
     
     }
 
-    @media(min-width: 361px){
+    @media(min-width: 1020px){
         
     
-    gap: 24px;
+    gap: 20px;
     
     }
 

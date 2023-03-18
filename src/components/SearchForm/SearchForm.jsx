@@ -1,28 +1,19 @@
 
 import PropTypes from 'prop-types';
-import { InputStyled, LabelStyled, IconStyled } from './SearchForm.styled';
-import { useSearchParams } from "react-router-dom";
+import { InputStyled, ContainerStyled, IconStyled } from './SearchForm.styled';
+
 
 
      
 
- const SearchForm = ({onFilter, filter}) => {
-    // console.log(filter);
-     const [searchParams, setSearchParams] = useSearchParams();
-     const query = searchParams.get("query") === null ? "" : searchParams.get("query");
-
-
-    //  const handleChange = () => {
-    //      setSearchParams({query: e.target.elements.input.value});
-    //  };
-
-
-    return (
-        <LabelStyled>
-                <IconStyled  />
-                <InputStyled type="text" name='filter' onChange={onFilter} value={filter} placeholder="Filter by name..." />             
-        </LabelStyled>
-    );
+const SearchForm = ({ onFilter, filter }) => {
+ 
+     return (
+         <ContainerStyled>
+             <IconStyled />
+             <InputStyled type="text" name='filter' onChange={onFilter} value={filter} placeholder="Filter by name..." />
+         </ContainerStyled>
+     );
 };
 
 
@@ -33,6 +24,3 @@ SearchForm.propTypes = {
 
 export default SearchForm;
 
-
-
-// AiOutlineSearch

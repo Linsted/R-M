@@ -12,15 +12,15 @@ export const  fetchCharacters  = async () => {
 };
 
 
-// https://rickandmortyapi.com/api/character/2
 
 
-export const  fetchCharacterById  = async (id) => {
+export const  fetchCharacterById  = async (id, abortController) => {
 
+    console.log(abortController)
     
     axios.defaults.baseURL = "https://rickandmortyapi.com/api/character/";
     const response = await axios.get(`${id}`, {
-       
+       signal: abortController.signal,
     });
   
     return response;

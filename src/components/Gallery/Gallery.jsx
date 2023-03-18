@@ -6,9 +6,6 @@ import { GalleryStyled } from "./Gallery.styled";
 
 
  const Gallery = ({characters}) => { 
-    // console.log(characters);
-
-
 
     return (
         <GalleryStyled> 

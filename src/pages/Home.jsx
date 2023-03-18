@@ -4,7 +4,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import Gallery from "../components/Gallery/Gallery";
 import Error from "../components/Error/Error";
 import SearchForm from "../components/SearchForm/SearchForm";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
+import Header from "../components/Header/Header";
+ import { useDebounce } from 'use-debounce';
 
 
 
@@ -18,10 +20,15 @@ const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(false);
   const [filteredCharacters, setFilteredCharacters] = useState([]);
+  const [firstLoading, setFirstLoading] = useState(false);
+  
+ 
   
   useEffect(() => {
+    setError(false);
     const fetchData = async () => {
       let sorted;
+      
       try {
         const data = await API.fetchCharacters();
         sorted = [...data.data.results];
@@ -45,28 +52,30 @@ const Home = () => {
     setFilteredCharacters(characters.filter(character => character.name.toLowerCase().includes(normalizedRequest)))
   }, [characters, query]);
 
+   
+
 
   useEffect(() => {
-    // console.log(filteredCharacters)
-    if (query.length !== 0 && filteredCharacters.length === 0) { setError(true) };
+    if (firstLoading && query.length !== 0 && filteredCharacters.length === 0) { setError(true) };
     return (() => {
       setError(false);
+      setFirstLoading(true);
     })
 
-  }, [query, filteredCharacters]);
+  }, [query, filteredCharacters, firstLoading]);
 
   const filterForm = (evt) => setSearchParams({ query: evt.target.value });
 
-    return (<>
-        
-        <SearchForm
-            onFilter={filterForm}
-            filter={query} />
-        {error && <Error />}
-        <Gallery characters={filteredCharacters} />
-        <Toaster />
+  return (<>
+    <Link to="/"> <Header /></Link>
+    <SearchForm
+      onFilter={filterForm}
+      filter={query} />
+    {error && <Error />}
+    <Gallery characters={filteredCharacters} />
+    <Toaster />
     
-    </>);
+  </>);
 
      
 };

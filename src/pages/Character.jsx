@@ -1,8 +1,10 @@
 import { useEffect, useState, } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { fetchCharacterById } from "Api/Api";
 import CharacterInfo from "components/CharacterInfo/CharacterInfo";
 import MyLoader from "components/CharacterInfo/MyLoader";
+import { ContainerStyled, LinkStyled, LinkContainerStyled, IconStyled } from "../components/CharacterInfo/CharacterInfo.styled";
+import toast from 'react-hot-toast';
 
 
 
@@ -18,37 +20,42 @@ const Character = () => {
 
 
 
-console.log(id)
 
-useEffect(() => {
+
+    useEffect(() => {
+    
+        const abortController = new AbortController();
      const fetchCharacter = async () => {
         setLoading(true);
         try {
-            const response = await fetchCharacterById(id);
+            const response = await fetchCharacterById(id,abortController );
             setLoading(false);
             setCharacter(response.data);
         } catch (error) {
             console.log(error);
             setLoading(false);
+            toast.error('Sorry, an error occurred!');
          };
 
     };
 
         fetchCharacter();
-
+        return () => { 
+            abortController.abort();
+        };
     }, [id]);
 
-    console.log(character)
+
 
     return (
-        <>
-            
-            <Link to={backLinkHref}>Go back</Link>
-            
+        <ContainerStyled>
+            <LinkContainerStyled>
+                <LinkStyled to={backLinkHref}><IconStyled />Go back</LinkStyled>
+            </LinkContainerStyled>
             {loading ? <MyLoader loading={loading} /> : <CharacterInfo character={character} />}
             
-        </>
-)
+        </ContainerStyled>
+    );
 
 };
 export default Character;

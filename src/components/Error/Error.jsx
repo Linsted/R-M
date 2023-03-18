@@ -1,13 +1,14 @@
 import errorImg from "../../img/Error.jpg";
+import { ErrorContainerStyled } from "./Error.styled";
 
  const Error = () => {
 
     return (
-        <div>
+        <ErrorContainerStyled>
             <img src={errorImg} alt="Error" />
 
             
-        </div>
+        </ErrorContainerStyled>
     )
 };
 
