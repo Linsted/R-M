@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { Gallery } from "./Gallery/Gallery";
 import toast, { Toaster } from 'react-hot-toast';
 import { Error } from "./Error/Error";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "../pages/Home";
 
 export const App = () => {
 
@@ -57,6 +59,10 @@ export const App = () => {
 
   return (
     <div>
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route />
+      </Routes> */}
       < Header />
       <SearchForm
         onFilter={filterForm}
