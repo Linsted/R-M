@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/Rick-and-Morty/static/css/main.d2b1a45e.css",
-    "main.js": "/Rick-and-Morty/static/js/main.5cf4230a.js",
-    "static/js/217.a317ebc9.chunk.js": "/Rick-and-Morty/static/js/217.a317ebc9.chunk.js",
-    "static/js/193.ef2e4462.chunk.js": "/Rick-and-Morty/static/js/193.ef2e4462.chunk.js",
+    "main.js": "/Rick-and-Morty/static/js/main.db1eac43.js",
+    "static/js/217.302e1e7c.chunk.js": "/Rick-and-Morty/static/js/217.302e1e7c.chunk.js",
+    "static/js/193.c6a1f848.chunk.js": "/Rick-and-Morty/static/js/193.c6a1f848.chunk.js",
     "static/js/331.137ab7b1.chunk.js": "/Rick-and-Morty/static/js/331.137ab7b1.chunk.js",
     "static/js/882.a66ee0e1.chunk.js": "/Rick-and-Morty/static/js/882.a66ee0e1.chunk.js",
     "static/js/121.4591fc4d.chunk.js": "/Rick-and-Morty/static/js/121.4591fc4d.chunk.js",
@@ -15,9 +15,9 @@
     "static/media/Header_img_mobile.jpg": "/Rick-and-Morty/static/media/Header_img_mobile.68569f5ed1ed6e054cf8.jpg",
     "index.html": "/Rick-and-Morty/index.html",
     "main.d2b1a45e.css.map": "/Rick-and-Morty/static/css/main.d2b1a45e.css.map",
-    "main.5cf4230a.js.map": "/Rick-and-Morty/static/js/main.5cf4230a.js.map",
-    "217.a317ebc9.chunk.js.map": "/Rick-and-Morty/static/js/217.a317ebc9.chunk.js.map",
-    "193.ef2e4462.chunk.js.map": "/Rick-and-Morty/static/js/193.ef2e4462.chunk.js.map",
+    "main.db1eac43.js.map": "/Rick-and-Morty/static/js/main.db1eac43.js.map",
+    "217.302e1e7c.chunk.js.map": "/Rick-and-Morty/static/js/217.302e1e7c.chunk.js.map",
+    "193.c6a1f848.chunk.js.map": "/Rick-and-Morty/static/js/193.c6a1f848.chunk.js.map",
     "331.137ab7b1.chunk.js.map": "/Rick-and-Morty/static/js/331.137ab7b1.chunk.js.map",
     "882.a66ee0e1.chunk.js.map": "/Rick-and-Morty/static/js/882.a66ee0e1.chunk.js.map",
     "121.4591fc4d.chunk.js.map": "/Rick-and-Morty/static/js/121.4591fc4d.chunk.js.map",
@@ -25,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.d2b1a45e.css",
-    "static/js/main.5cf4230a.js"
+    "static/js/main.db1eac43.js"
   ]
 }
