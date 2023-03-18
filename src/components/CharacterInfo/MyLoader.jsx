@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const MyLoader = ({ loading }) => {
     
-console.log(loading)
+
   return (
     
     

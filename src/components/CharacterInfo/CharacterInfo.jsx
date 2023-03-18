@@ -3,7 +3,7 @@ import { Container, ImageContainerStyled,ImageStyled,NameStyled,TitleStyled, Ite
 
 
 const CharacterInfo = ({ character }) => { 
-    console.log(character);
+
     const { image, name, gender, status, species, origin: { name: planet }, type } = character;
 
      return (
